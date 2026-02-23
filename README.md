@@ -3,16 +3,15 @@
 Predictive Machine Learning Project
 Foundations of Data Analytics — Module 7
 
-**Author:** Danilo Traconis
-**Date:** February 2026
+Author: Danilo Traconis
+Date: February 2026
 
 ---
 
 ## Project Overview
 
-This repo is a starter setup for a predictive machine learning project using a professional workflow (Git/GitHub + reproducible Python environment + Jupyter).
+This repository initializes a professional predictive machine learning workflow using:
 
-**Tools / packages used:**
 - Python 3.14
 - JupyterLab
 - numpy
@@ -22,71 +21,124 @@ This repo is a starter setup for a predictive machine learning project using a p
 - seaborn
 - scipy
 
+The purpose of this module is to build a structured ML project using:
+
+- Git + GitHub version control
+- A reproducible Python virtual environment
+- Professional project organization
+- A repeatable daily development workflow
+
 ---
 
-## Repo Structure (what’s in here)
+## Repository Structure
 
-- `README.md` — setup + workflow notes (this file)
-- `pyproject.toml` — project dependencies (managed by `uv`)
-- `uv.lock` — exact dependency lock file (commit this)
-- `.gitignore` — keeps `.venv/` and other local files out of GitHub
-- `.venv/` — local virtual environment (should NOT be pushed)
+```
+datafun-07-ml/
+│
+├── README.md
+├── pyproject.toml
+├── uv.lock
+├── .gitignore
+├── .python-version
+├── .venv/   (local only — not pushed to GitHub)
+└── danilotraconis_ml.ipynb
+```
 
 ---
 
 ## Quickstart (Windows / PowerShell)
 
-### 1) Clone the repo + open in VS Code
+### 1) Clone the repository and open in VS Code
 
 ```powershell
 cd C:\Repos
 git clone https://github.com/traconisdanilo/datafun-07-ml
 cd datafun-07-ml
 code .
-2) Create the environment + install dependencies (uv)
+```
+
+### 2) Create the virtual environment and install dependencies (uv)
+
+```powershell
 uv python pin 3.14
 uv sync
-3) Activate the environment
+```
+
+### 3) Activate the virtual environment
+
+```powershell
 .\.venv\Scripts\Activate
-4) Quick dependency check
+```
+
+You should now see `(datafun-07-ml)` in your terminal.
+
+### 4) Verify dependencies
+
+```powershell
 python -c "import numpy, pandas, pyarrow, matplotlib, seaborn, scipy; print('all imports ok')"
-5) Start JupyterLab
+```
+
+Expected output:
+
+```
+all imports ok
+```
+
+### 5) Start JupyterLab
+
+```powershell
 jupyter lab
-Repeatable Daily Workflow (do this every work session)
-1) Pull latest changes
+```
+
+Open:
+
+```
+danilotraconis_ml.ipynb
+```
+
+---
+
+## Repeatable Daily Workflow
+
+Use this every time you work on the project.
+
+### Step 1 — Pull latest changes
+
+```powershell
 git pull
-2) Activate the virtual environment
+```
+
+### Step 2 — Activate virtual environment
+
+```powershell
 .\.venv\Scripts\Activate
-3) Sync dependencies (only if something changed)
+```
+
+### Step 3 — Sync dependencies (if needed)
+
+```powershell
 uv sync
-4) Work (edit notebooks / files)
+```
 
-Open VS Code
+### Step 4 — Work
 
-Run Jupyter cells
+- Edit notebooks
+- Run Jupyter cells
+- Save files
 
-Save your changes
+### Step 5 — Save progress to GitHub
 
-5) Save progress to GitHub
+```powershell
 git add -A
 git commit -m "Update project work"
 git push
-Notes / Common Fixes
-If Jupyter won’t run (missing kernel / ipykernel)
+```
 
-Run:
+---
 
-uv add ipykernel
-uv sync
+## Commands Used (Project Setup Log)
 
-Then restart VS Code and re-select the kernel.
-
-If you opened a new terminal and Python commands fail
-
-You probably forgot to activate .venv:
-
-.\.venv\Scripts\Activate
-Commands I Used (project setup log)
+```powershell
 cd C:\Repos
 git clone https://github.com/traconisdanilo/datafun-07-ml
 cd datafun-07-ml
@@ -101,3 +153,44 @@ python -c "import numpy, pandas, pyarrow, matplotlib, seaborn, scipy; print('all
 git add -A
 git commit -m "Initialize ML project"
 git push
+```
+
+---
+
+## Common Fixes
+
+### If Jupyter does not detect the kernel
+
+```powershell
+uv add ipykernel
+uv sync
+```
+
+Restart VS Code and re-select the `.venv` kernel.
+
+### If Python commands fail in a new terminal
+
+You probably forgot to activate the environment:
+
+```powershell
+.\.venv\Scripts\Activate
+```
+
+---
+
+## Module 7 Goals
+
+This repository will be used to:
+
+- Build predictive machine learning models
+- Explore datasets using pandas
+- Visualize data using seaborn and matplotlib
+- Evaluate model performance
+- Document insights clearly using Jupyter notebooks
+- Follow professional development workflow practices
+
+---
+
+## License
+
+This project is for educational use as part of Foundations of Data Analytics.
