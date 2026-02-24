@@ -13,4 +13,6 @@ dependencies = [
   "matplotlib",
   "seaborn",
   "scipy",
+  "scikit-learn>=1.8.0",
+  "ipykernel>=7.2.0",
 ]
